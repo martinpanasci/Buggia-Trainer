@@ -1,0 +1,171 @@
+.general { 
+    background-color: #23272a;   
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .general-content {
+    
+    display: flex;
+    justify-content: space-between;
+    margin-top: 55px;
+    padding-bottom: 30px;
+  }
+  
+  .general-1 { 
+    
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    height: 450px;
+    padding: 0;
+    margin: 0 5px;  
+    transition: transform 0.5s ease;  
+  }
+  
+  .general-1:hover {
+    transform: scale(1.05);
+  }
+  
+  .general-1 a {
+    padding: 170px 55px;
+    display: block; 
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+  }
+  
+  
+  .general-2 {
+    
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    height: 450px;
+    padding: 0;
+    margin: 0 5px;  
+    transition: transform 0.5s ease; 
+  }
+  
+  .general-2:hover {
+    transform: scale(1.05);
+  }
+  
+  .general-2 a {
+    padding: 170px 55px;
+    display: block; 
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+  }
+  
+  .general-3 {
+    
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    height: 450px;
+    padding: 0;
+    margin: 0 5px;  
+    transition: transform 0.5s ease; 
+  }
+  
+  .general-3:hover {
+    transform: scale(1.05);
+  }
+  
+  .general-3 a {
+    padding: 170px 55px;
+    display: block; 
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+  }
+  
+  .general-4 {
+    
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    height: 450px;
+    padding: 0;
+    margin: 0 5px;  
+    transition: transform 0.5s ease; 
+  }
+  
+  .general-4:hover {
+    transform: scale(1.05);
+  }
+  
+  .general-4 a {
+    padding: 170px 55px;
+    display: block; 
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+  }
+  
+  .general h2 {
+    margin-top: 20px;    
+    font-size: 50px;
+    text-transform: uppercase;
+    color: #b9bbbe;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .txt h3 {
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  
+  .txt p {
+    color: #ffffff;
+    font-size: 16px;
+  }
+
+
+
+
+
+  @media (max-width: 991px) {
+    .general {
+        padding: 30px 0; /* Reduce el padding vertical para pantallas más pequeñas */
+    }
+    
+    .general-content {
+        flex-direction: column; /* Cambia la disposición a columna */
+        align-items: center; /* Centra los elementos */
+        margin-top: 30px; /* Ajusta el margen superior */
+    }
+    
+    .general-1, .general-2, .general-3, .general-4 {
+        height: 300px; /* Reduce la altura de los elementos para pantallas más pequeñas */
+        margin: 10px 0; /* Ajusta los márgenes para un diseño en columna */
+        padding: 0; /* Mantiene el padding en 0 */
+    }
+    
+    .general-1 a, .general-2 a, .general-3 a, .general-4 a {
+        padding: 100px 20px; /* Ajusta el padding interno del enlace */
+    }
+    
+    h2 {
+        font-size: 36px; /* Reduce el tamaño del título */
+        margin-bottom: 20px; /* Ajusta el margen inferior del título */
+    }
+    
+    .txt h3 {
+        font-size: 16px; /* Reduce el tamaño de la fuente del subtítulo */
+        margin-bottom: 15px; /* Ajusta el margen inferior del subtítulo */
+    }
+    
+    .txt p {
+        font-size: 14px; /* Reduce el tamaño de la fuente del párrafo */
+    }
+}

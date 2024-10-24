@@ -1,0 +1,149 @@
+/* Botón para abrir/cerrar la barra lateral en pantallas pequeñas */
+
+.sidebar-toggle {
+    display: none; /* Oculta el botón en pantallas grandes */
+    background: #00aeff;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    position: fixed;
+    top: 80px;
+    left: 10px;
+    z-index: 100;
+}
+
+.sidebar-content {
+    display: block; /* Por defecto muestra el contenido */
+    position: relative;
+    z-index: 20;
+}
+
+/*sidebar*/
+
+.sidebar-section {
+    background-color: #23272a;    
+    color: #ffffff;
+    padding: 20px; /* Espaciado interno en la barra lateral */
+    width: 25%;
+    height: auto; /* Ajusta la altura al contenido */
+    position: relative; /* Elimina el efecto de fijación */  
+    margin-top: -1px;    
+}
+
+.sidebar h2 {
+    text-align: center;    
+    margin-bottom: 20px;
+}
+
+fieldset {
+    margin-bottom: 20px;
+    border: none;
+}
+
+legend {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+label:hover {
+    color: #0056b3;   
+}
+
+input[type="checkbox"] {    
+    margin-right: 10px;
+    transform: scale(2); 
+}
+
+.btn-apply {
+    background-color: #00aeff;
+    border: none;
+    color: #ffffff;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 30px;
+    margin-right: 11px;
+}
+
+.btn-clear {
+    background-color: #F04747;
+    border: none;
+    color: #ffffff;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 30px;
+    margin-right: 11px;
+}
+
+.btn-apply:hover {
+    background-color: #007bb5;
+}
+
+.btn-clear:hover {
+    background-color: #bd3838;
+}
+
+
+
+/*end sidebar*/
+
+
+@media (max-width: 991px) {
+    /* Mostrar el botón de alternar sidebar en pantallas pequeñas */
+    .sidebar-toggle {
+        display: block; /* Muestra el botón */
+        
+    }
+
+    button {
+        margin-top: 7px;
+        margin-left: 11px;
+    }
+
+    /* Ocultar la barra lateral por defecto en pantallas pequeñas */
+    .sidebar-content {
+        display: none; /* Oculta la barra lateral por defecto */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 75%;
+        height: 100%;
+        background-color: #23272a;
+        z-index: 90;
+        padding: 130px 20px;        
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+        overflow-y: auto;
+        transition: transform 0.3s ease;
+        transform: translateX(-100%); /* Mueve la sidebar fuera de la pantalla */
+    }
+
+    /* Al activar el botón, mostrar la sidebar */
+    .sidebar-content.active {
+        display: block; /* Muestra la sidebar */
+        transform: translateX(0); 
+    }
+
+    .sidebar-section {        
+        width: 100%; /* La sidebar ocupa el 100% de ancho en pantallas pequeñas */
+        padding-top: 60px; /* Ajuste por la posición fija del botón */
+        position: relative;
+    }
+
+    /* Ajustar los productos en la sección derecha */
+    .product-section .container {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        margin-top: 20px;
+    }
+}

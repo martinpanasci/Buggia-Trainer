@@ -1,0 +1,143 @@
+.main-section {
+    padding: 50px 0;    
+  }
+  
+  .main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espacia la imagen y el contenido */
+    gap: 20px; /* Espacio entre la imagen y el contenido */
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .programa-img img {
+    max-width: 100%; /* La imagen no se desborda */
+    height: 650px;
+    border-radius: 5px; /* Esquinas redondeadas */
+  }
+  
+  .programa-info {
+    display: flex;
+    flex-direction: column; /* Coloca el contenido en columna */
+    justify-content: center;
+    max-width: 600px; /* Limita el ancho del contenido */
+  }
+  
+  .programa-info h3 {
+    font-size: 54px;
+    margin-bottom: 40px;
+    color: #ffffff; /* Color del título */
+  }
+  
+  .programa-info p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #989898; /* Color del texto */
+    line-height: 1.6; /* Espaciado entre líneas */
+  }
+  
+  .programa-info h4 {
+    font-size: 42px;
+    color: #ffffff; /* Color del precio */
+    margin-bottom: 25px;
+  }
+  
+  .btn-comprar {
+    padding: 10px 20px;
+    background-color: #00aeff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-comprar:hover {
+    background-color: #0056b3;
+  }
+
+  .programa-info ul {
+    display: flex; /* Coloca los elementos en la misma línea */
+    gap: 10px; /* Espacio entre los elementos */
+    margin-bottom: 20px; /* Espacio debajo de la lista */
+    padding: 0; /* Elimina el padding por defecto */
+    list-style: none; /* Elimina los bullets */
+  }
+  
+  .programa-info ul li {
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 14px;
+  }
+  
+  .programa-info ul li.catg-even {
+    background-color: #202020; /* Fondo gris claro */
+    color: #ffffff; /* Texto blanco */
+  }
+  
+  .programa-info ul li.catg-odd {
+    background-color: #ffffff; /* Fondo blanco */
+    color: #000000; /* Texto negro */
+  }
+
+  @media (max-width: 991px) {
+    .main-section {
+      padding: 30px 15px; /* Reduce el padding para pantallas más pequeñas */
+    }
+  
+    .main {
+      flex-direction: column; /* Cambia la dirección de flex a columna para pantallas más pequeñas */
+      align-items: center; /* Centra los elementos horizontalmente */
+      gap: 15px; /* Reduce el espacio entre la imagen y el contenido */
+      max-width: 100%; /* Asegura que el contenedor use el 100% del ancho disponible */
+      margin: 0; /* Elimina el margen automático */
+    }
+  
+    .programa-img img {
+      margin-top: 40px;
+      height: 60vh; 
+      max-width: 100%; /* Asegura que la imagen no se desborde del contenedor */
+    }
+  
+    .programa-info {
+      max-width: 100%; /* Asegura que el contenido use el 100% del ancho disponible */
+      padding: 0 15px; /* Añade un poco de padding a los lados */
+    }
+  
+    .programa-info h3 {
+      font-size: 36px; /* Reduce el tamaño del título para pantallas más pequeñas */
+      margin-bottom: 20px; /* Reduce el margen inferior */
+    }
+  
+    .programa-info p {
+      font-size: 14px; /* Reduce el tamaño del texto */
+      margin-bottom: 15px; /* Reduce el margen inferior */
+    }
+  
+    .programa-info h4 {
+      font-size: 40px; /* Reduce el tamaño del precio */
+      margin-bottom: 15px; /* Reduce el margen inferior */
+    }
+
+    .programa-info h5 {
+      font-size: 16px;  
+    }
+  
+    .btn-comprar {
+      padding: 8px 16px; /* Ajusta el padding del botón */
+      font-size: 26px; /* Reduce el tamaño del texto del botón */
+    }
+  
+    .programa-info ul {
+      flex-direction: column; /* Cambia la dirección de los elementos de la lista a columna */
+      gap: 5px; /* Reduce el espacio entre los elementos de la lista */
+    }
+  
+    .programa-info ul li {
+      font-size: 12px; /* Reduce el tamaño del texto en los elementos de la lista */
+      padding: 8px 15px; /* Ajusta el padding de los elementos de la lista */
+    }
+  }
+  

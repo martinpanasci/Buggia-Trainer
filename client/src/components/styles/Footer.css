@@ -1,0 +1,125 @@
+.footer {
+    background-color: #202020; 
+    padding: 0;
+    color: #ffffff;
+    position: relative; /* Posiciona el footer en el flujo normal del documento */
+    z-index: 2; /* Asegura que el footer esté encima del video si es necesario */
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .footer-left ul {
+    padding-top: 20px;
+    list-style: none;
+  }
+  
+  .footer-left ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-left ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-left ul li a:hover {  
+    color: #0056b3; 
+  }
+  
+  .footer-center .footer-logo {
+    max-width: 150px;
+  }
+  
+  .footer-right {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .footer-right a {
+    color: #ffffff;
+    margin-left: 15px;
+    font-size: 20px;
+    transition: color 0.3s ease; 
+  }
+  
+  .footer-right a img {
+    width: 24px;
+    height: auto;
+    vertical-align: middle;
+  }
+  
+  .footer-right a:hover {
+    color: #0056b3; 
+  }
+
+  /*scroll to top*/
+
+  .scroll-to-top-btn {
+    position: fixed;
+    bottom: 5%;
+    right: 10px;
+    background-color: #00aeff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+  }
+  
+  .scroll-to-top-btn:hover {
+    background-color: #007bb5;
+  }
+  
+  .scroll-to-top-btn.hide {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+
+
+
+
+
+
+
+ @media(max-width:991px) {
+  .footer-container {
+    flex-direction: column; 
+    align-items: center; 
+  }
+
+  .footer-left, .footer-center, .footer-right {
+    flex: 1 1 auto; 
+    text-align: center; 
+    margin: 10px 0; 
+  }
+
+  .footer-right {
+    display: flex;
+    justify-content: center; 
+    gap: 10px; 
+  }
+
+  .footer-right a {
+    font-size: 16px;
+  }
+
+  .footer-left ul li a {
+    font-size: 16px; 
+  }
+}

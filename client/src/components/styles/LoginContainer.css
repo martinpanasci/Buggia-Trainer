@@ -1,0 +1,15 @@
+.login-container {
+    max-width: 1200px;
+    margin: 0 auto;    
+    display: flex;
+    justify-content: space-between; 
+    gap: 20px;
+    padding-top: 50px;
+    
+}
+
+@media (max-width: 991px) {
+    .login-container {
+        flex-direction: column;   
+    }    
+}

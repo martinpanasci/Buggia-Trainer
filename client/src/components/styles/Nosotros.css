@@ -1,0 +1,102 @@
+.info-2 {    
+    padding: 50px 0;    
+  }
+  
+  .testi { 
+    display: flex;
+    align-items: center;
+    text-align: left;
+    margin-top: 35px;
+    padding-bottom: 30px;
+  }
+  
+  .testi-left {
+    width: 50%;
+    padding-right: 25px;  
+  }
+  
+  .testi-right {
+    width: 50%;
+    padding-left: 35px;  
+  }
+  
+  .testi-txt {
+    margin-bottom: 25px;
+  }
+  
+  .testi-txt img {
+    width: 200px;
+    margin-bottom: 15px;
+  }
+  
+  .testi-txt h3 {
+    color: #ebebeb; 
+    text-shadow: 4px 4px 8px #000000;  
+  }
+  
+  .testi-txt p {
+    color: #ffffff;
+    margin-top: 25px;
+  }
+
+.info-content h2 {
+    margin-top: 20px;
+    font-size: 50px;
+    text-transform: uppercase;
+    color: #b9bbbe;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+@media (max-width: 991px) {
+  .info-2 {
+      padding: 20px 0; /* Reduce el padding vertical para pantallas más pequeñas */
+  }
+  
+  .testi {
+      flex-direction: column; /* Cambia la disposición a columna */
+      align-items: center; /* Centra los elementos */
+      text-align: center; /* Cambia la alineación del texto a centro */
+      margin-top: 20px; /* Ajusta el margen superior */
+  }
+  
+  .testi-left, .testi-right {
+      width: 100%; /* Ajusta el ancho a 100% para pantallas más pequeñas */
+      padding: 0; /* Elimina el padding lateral */
+      margin-bottom: 20px; /* Agrega margen inferior para separar los bloques */
+  }
+  
+  .testi-right {
+      padding-left: 0; /* Elimina el padding izquierdo en pantallas más pequeñas */
+  }
+  
+  .testi-left {
+      padding-right: 0; /* Elimina el padding derecho en pantallas más pequeñas */
+  }
+  
+  .testi-txt {
+      margin-bottom: 15px; /* Reduce el margen inferior */
+  }
+  
+  .testi-txt img {
+      width: 100%; /* Ajusta el ancho de la imagen para pantallas pequeñas */
+      max-width: 300px; /* Limita el ancho máximo de la imagen */
+      margin-bottom: 10px; /* Ajusta el margen inferior */
+  }
+  
+  .testi-txt h3 {
+      font-size: 24px; /* Reduce el tamaño de la fuente */
+      text-shadow: 2px 2px 4px #000000; /* Reduce el tamaño de la sombra */
+  }
+  
+  .testi-txt p {
+      font-size: 14px; /* Reduce el tamaño de la fuente del párrafo */
+      margin-top: 15px; /* Ajusta el margen superior */
+  }
+  
+  .info-content h2 {
+      font-size: 36px; /* Reduce el tamaño de la fuente del título */
+      margin-bottom: 20px; /* Ajusta el margen inferior */
+  }
+}

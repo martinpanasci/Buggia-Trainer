@@ -1,0 +1,113 @@
+.ShoppingCart-container {
+    max-width: 1200px;
+    margin: 50px auto;    
+}
+
+.ShoppingCart-container h2 {
+    margin-top: 20px;
+    font-size: 50px;
+    text-transform: uppercase;
+    color: #b9bbbe; /* Manteniendo el color de tu encabezado */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.ShoppingCart-container p {
+    text-align: center;
+    font-size: 16px;
+}
+
+.ShoppingCart {
+    display: flex;
+    align-items: flex-start; /* Alinea los elementos al inicio */
+    justify-content: space-between; /* Espacia la imagen y el contenido */
+    gap: 20px; /* Espacio entre la imagen y el contenido */
+    max-width: 1200px;
+    margin: 0 auto;    
+}
+
+.ShoppingCart-items {
+    flex: 1; /* Permite que ocupe el espacio disponible */
+}
+
+.ShoppingCart-items ul {
+    list-style-type: none; /* Sin estilo de lista */
+    padding: 0; /* Sin padding */
+}
+
+.ShoppingCart-items li {    
+    display: flex; /* Usar flexbox para alinear los elementos */
+    align-items: center; /* Centrar verticalmente */    
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 10px; /* Espacio entre elementos */
+    margin-right: 10px;
+    background-color: #23272a; /* Fondo gris claro para los items */
+    transition: box-shadow 0.3s; /* Transición para sombra */
+}
+
+.ShoppingCart-items li h3{
+    font-size: 22px;
+    margin-right: 5px;
+}
+
+.ShoppingCart-items li .item-details {
+    display: flex;
+    flex-direction: column; /* Para apilar el precio y el botón */ 
+    margin-left: 10px; /* Espacio entre la imagen y los detalles */
+    margin-right: 10px;    
+}
+
+.ShoppingCart-items li .item-details p {    
+    margin-bottom: 20px; /* Ajusta este valor para aumentar el espacio entre el precio y el botón */
+}
+
+.ShoppingCart-items img {
+    margin-right: 20px; /* Espacio entre la imagen y el texto */
+    border-radius: 5px; /* Bordes redondeados para la imagen */
+}
+
+.ShoppingCart-items button {
+    padding: 10px 20px;
+    background-color: #00aeff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.ShoppingCart-items button:hover {
+    background-color: #007bb5; /* Color de fondo al pasar el mouse */
+}
+
+.ShoppingCart-btns {
+    display: flex;
+    flex-direction: column; /* Botones en columna */
+    justify-content: space-between; /* Espacio entre los botones */
+    align-items: flex-end; /* Alinea a la derecha */
+    padding: 20px;
+}
+
+.ShoppingCart-btns h3 {
+    font-size: 24px; /* Tamaño de fuente para el total */
+    color: #ffffff; /* Color del texto */
+    margin-bottom: 20px; /* Espacio debajo del total */
+}
+
+.ShoppingCart-btns button {
+    padding: 10px 20px;
+    background-color: #00aeff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;    
+}
+
+.ShoppingCart-btns button:hover {
+    background-color: #007bb5; /* Color de fondo al pasar el mouse */
+}

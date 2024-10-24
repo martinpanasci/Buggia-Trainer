@@ -1,0 +1,121 @@
+.servicios-section {
+    
+    padding: 40px 0;
+    text-align: center;
+  }
+  
+  .servicios-cards {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    padding-bottom: 30px;
+  }
+  
+  .servicios-t1 {    
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    padding: 60px 55px;
+    margin: 0 5px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .servicios-t2 {    
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    padding: 60px 55px;
+    margin: 0 5px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .servicios-t3 {    
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    padding: 60px 55px;
+    margin: 0 5px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .servicios-section h3 {
+    font-size: 70px;
+  }
+  
+  .servicios-section p {
+    margin-top: 80px;
+    text-align: left;
+  }
+  
+  .btn-3 {  
+    background-color: #00aeff;
+    color: #ffffff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+    margin-top: auto; 
+  }  
+  
+  .btn-3:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+
+.servicios-section h2 {
+    margin-top: 20px;
+    font-size: 50px;
+    text-transform: uppercase;
+    color: #b9bbbe;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+@media (max-width: 991px) {
+  .servicios-section {
+      padding: 20px 0; /* Reduce el padding vertical en pantallas más pequeñas */
+  }
+  
+  .servicios-cards {
+      flex-direction: column; /* Cambia a una disposición vertical */
+      align-items: center; /* Centra los elementos */
+      margin-top: 30px; /* Ajusta el margen superior */
+      padding: 0 5px; /* Reduce el padding horizontal */
+  }
+  
+  .servicios-t1, .servicios-t2, .servicios-t3 {
+      height: 400px; /* Ajusta la altura de los elementos para pantallas más pequeñas */
+      padding: 30px 20px; /* Reduce el padding interno */
+      margin: 10px 0; /* Ajusta los márgenes entre elementos */
+      width: 100%; /* Asegura que los elementos ocupen el ancho completo */
+      background-size: cover; /* Mantiene el ajuste de fondo */
+  }
+  
+  .servicios-section h3 {
+      font-size: 40px; /* Ajusta el tamaño del texto para pantallas más pequeñas */
+  }
+  
+  .servicios-section p {
+      margin-top: 40px; /* Ajusta el margen superior del párrafo */
+      text-align: center; /* Centra el texto en pantallas más pequeñas */
+  }
+  
+  .btn-3 {
+      padding: 10px 20px; /* Ajusta el padding del botón */
+      font-size: 14px; /* Reduce el tamaño de la fuente del botón */
+  }
+  
+  .servicios-section h2 {
+      font-size: 36px; /* Ajusta el tamaño del título */
+      margin-bottom: 20px; /* Reduce el margen inferior del título */
+  }
+}

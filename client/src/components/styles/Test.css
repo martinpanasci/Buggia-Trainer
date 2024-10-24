@@ -1,0 +1,86 @@
+.quiz-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #23272a;
+    border-radius: 8px;
+    color: #fff;
+    text-align: center;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.quiz-container h2 {
+    margin-top: 20px;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: #b9bbbe;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.quiz-container h3 {
+    margin-top: 20px;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #b9bbbe;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.quiz-container p {
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.quiz-option-btn {
+    padding: 10px 20px;
+    background-color: #00aeff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;    
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quiz-option-btn:hover {
+    background-color: #007bb5;
+}
+
+.quiz-navigation {
+    margin-top: 20px;
+}
+
+.back-btn {
+    padding: 10px 20px;
+    background-color: #F04747;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #bd3838;
+}
+
+.fade-out {
+    opacity: 0;
+    transform: translateX(50px); /* Desplaza hacia la derecha durante la transición */
+  }
+  
+  .fade-in {
+    opacity: 1;
+    transform: translateX(0); /* Devuelve a la posición original */
+  }

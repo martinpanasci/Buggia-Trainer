@@ -1,0 +1,161 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {    
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: center;
+  display: flex;
+  padding: 35px 0;
+  position: relative;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 70px;
+}
+
+.menu-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #202020;
+  z-index: -1;
+}
+
+.menu .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  
+}
+
+
+.logo {
+  margin-left: 40px;
+  color: #00aeff;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+
+.menu .navbar ul li {
+  position: relative;
+  float: left;
+}
+
+.menu .navbar ul li a {
+  font-size: 18px;
+  padding: 20px;
+  color: #ffffff;
+  display: block;
+  font-weight: 600;
+}
+
+.menu .navbar ul li img {
+  width: 40px;
+  height: auto;
+  transition: scale(1.05);
+}
+
+.menu .navbar ul li button {
+  margin-top: 12px;
+  padding: 10px 20px;      
+  background: none;
+  border: 2px solid #00aeff;
+  border-radius: 5px; 
+  cursor: pointer;  
+  color: #ffffff; 
+  font-size: 18px; 
+  font-weight: 600; 
+  margin-right: 10px;  
+}
+
+.menu .navbar ul li button:hover {
+  background-color: #00aeff; /* Cambia el fondo al pasar el mouse */
+  color: #ffffff;
+}
+
+.menu .navbar ul li a:hover {
+  transform: scale(1.05);
+}
+
+#menu {
+  display: none;
+}
+
+.menu-icono {
+  width: 25px;
+}
+
+.menu label {
+  cursor: pointer;
+  display: none;
+}
+  
+
+  @media(max-width:991px) {
+    .menu {
+      padding: 20px;
+      height: 70px;
+    }
+  
+    .menu label {
+      display: initial;
+    }
+  
+    .menu .navbar {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: #202020;
+      display: none;
+    }
+  
+    .menu .navbar ul li {
+      width: 100%;
+    }
+  
+    #menu:checked ~ .navbar {
+      display: initial;
+    }
+  
+    .header {
+      min-height: 0vh;
+    }
+  
+    .back-video {    
+      height: 100vh; 
+      object-fit: cover;   
+      bottom: 0;
+      
+    }
+  
+    .header-content {
+      padding: 50px 30px;
+    }
+  
+    .header-txt h1 {
+      font-size: 50px;
+    }
+  
+    .header-txt p {
+      padding: 0;
+    }
+}

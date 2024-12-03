@@ -1,14 +1,15 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './styles/Header.css'; 
+import './styles/Header.css';
 import menuIcon from '../assets/images/menu.png';
 import carrito from '../assets/images/carrito.png';
+import { useCart } from './CartContext';
 
 
 function Header() {
-
+  const { cartItems } = useCart();
   const navigate = useNavigate();
-  const isAuthenticated = !!localStorage.getItem('token');
+  const isAuthenticated = !!localStorage.getItem('token');  
 
   const handleLoginRedirect = () => {
     if (isAuthenticated) {
@@ -17,13 +18,13 @@ function Header() {
       navigate('/login'); // Redirigir a la página de login
     }
   };
-
+  
   return (
     <header className="header">
       <div className="menu">
         <div className="menu-bg"></div>
         <div className="container">
-          <a href="/" className="logo">logo</a>
+          <a href="/" className="logo">Buggia Trainer</a>
           <input type="checkbox" id="menu" />
           <label htmlFor="menu"> <img src={menuIcon} className="menu-icono" alt="Menu" /> </label>
           <nav className="navbar">
@@ -31,8 +32,13 @@ function Header() {
               <li><a href="/">Inicio</a></li>
               <li><a href="/programas">Programas</a></li>
               <li><a href="/test">Test</a></li>
-              <li><a href="/alimentacion">Planes de Alimentación</a></li>
-              <li><a href="/carrito"><img src={carrito} alt="Carrito"/></a></li>               
+              {/*<li><a href="/alimentacion">Planes de Alimentación</a></li>*/}
+              <li className="cart-icon-container">
+                <a href="/carrito">
+                  <img src={carrito} alt="Carrito" />
+                  {cartItems.length > 0 && <span className="cart-count">{cartItems.length}</span>} {/* Contador dinámico */}
+                </a>
+              </li>
               <li>
                 {!isAuthenticated ? (
                   <>

@@ -34,25 +34,3 @@ const Faq = ({ faqs }) => {
 };
 
 export default Faq;
-
-
-
-
-//const faqData = [
-//    {
-//        question: "¿Cuál es la política de devoluciones?",
-//        answer: "Ofrecemos una política de devolución de 30 días para todos los productos no utilizados y en su embalaje original."
-//    },
-//    {
-//        question: "¿Cuánto tiempo tarda el envío?",
-//        answer: "El tiempo de envío varía según la ubicación, pero generalmente toma entre 3 y 7 días hábiles."
-//    },
-//    {
-//        question: "¿Los productos tienen garantía?",
-//        answer: "Sí, todos nuestros productos cuentan con una garantía de 1 año a partir de la fecha de compra."
-//    },
-//    {
-//        question: "¿Puedo cambiar un producto por otro?",
-//        answer: "Sí, puedes cambiar productos siempre y cuando no hayan sido utilizados y estén en su embalaje original."
-//    }
-//];

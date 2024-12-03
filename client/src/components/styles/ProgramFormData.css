@@ -1,0 +1,109 @@
+/* Contenedor principal del formulario */
+.program-form {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #23272a; /* Fondo gris oscuro */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.program-form h1 {
+    text-align: center;
+    color: #00aeff; /* Azul */
+    font-size: 2em;
+    margin-bottom: 1rem;
+}
+
+.program-form h3 {    
+    color: #00aeff; /* Azul */
+    font-size: 1.5em;
+    margin-top: 1rem;
+}
+
+/* Campos del formulario */
+.program-form label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 500;
+    color: #ffffff; /* Texto blanco */
+}
+
+.program-form input[type="text"],
+.program-form textarea,
+.program-form input[type="file"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #000; /* Texto negro */
+}
+
+/* Botones */
+.program-form .btn-program-form {
+    background-color: #00aeff; /* Azul */
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.program-form .btn-program-form:hover {
+    background-color: #0056b3; /* Azul más oscuro */
+}
+
+/* Detalles y FAQs */
+.program-form .details-container-program-form,
+.program-form .faqs-container-program-form,
+.program-form .filters-container-program-form {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #202020; /* Fondo gris oscuro */
+    border-radius: 4px;
+}
+
+.program-form .details-container-program-form label,
+.program-form .faqs-container-program-form label {
+    color: #ffffff; /* Texto blanco */
+}
+
+.program-form .details-container-program-form textarea,
+.program-form .faqs-container-program-form textarea {
+    resize: vertical;
+}
+
+.program-form .add-btn-program-form {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: #23272a; /* Gris oscuro */
+    color: #00aeff; /* Azul */
+    border: 1px solid #00aeff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.program-form .add-btn-program-form:hover {
+    background-color: #00aeff;
+    color: #ffffff;
+}
+
+.program-form-select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #000; /* Texto negro */
+    background-color: #ffffff; /* Fondo blanco */
+}

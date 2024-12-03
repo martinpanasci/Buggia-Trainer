@@ -10,7 +10,7 @@ function BgVideo() {
             </video>
             <div className="header-content container">
                 <div className="header-txt">
-                    <h1>MUSCULARmente</h1>
+                    <h1>BUGGIA Trainer</h1>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Odit ullam porro dolore esse tempore perspiciatis,

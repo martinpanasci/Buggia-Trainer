@@ -1,23 +1,44 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import axios from 'axios';
 import Progmain from '../Progmain';
 import Progdetails from '../Progdetails';
 import Progfaq from '../Progfaq';
-import programsData from '../../data/programsData';
-
+//import './styles/ProgramContainer.css'
 
 const Program = () => {
   const { id } = useParams(); // Extrae el ID de la URL
-  console.log(id);
-  const program = programsData.find(p => p.id === parseInt(id)); // Encuentra el programa por su ID
+  const [program, setProgram] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  // Si el programa no existe, muestra un mensaje de error
-  if (!program) {
-    return <div>Programa no encontrado</div>;
+  useEffect(() => {
+    const fetchProgram = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get(`http://localhost:3000/getProgramInfo/${id}`); // Reemplaza con tu URL del backend
+        setProgram(response.data); // Guarda los datos del programa
+        console.log(response.data)
+      } catch (error) {
+        setError(error.response?.data?.error || 'Error al obtener el programa');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProgram();
+  }, [id]);
+
+  if (loading) {
+    return <div>Cargando...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
   }
 
   return (
-    <div>
+    <div className='program-container-page'>
       <Progmain data={program.data} />
       <Progdetails details={program.details} />
       <Progfaq faqs={program.faqs} />

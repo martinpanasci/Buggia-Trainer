@@ -1,33 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import './styles/ShoppingCart.css'
+import React, { useState } from 'react';
+import './styles/ShoppingCart.css';
+import { initMercadoPago, Wallet } from '@mercadopago/sdk-react';
+import { useCart } from './CartContext';
 import { jwtDecode } from 'jwt-decode';
 
-
-const ShoppingCart = () => {
-
-    const [cartItems, setCartItems] = useState([]);
-
-
-    // Cargar los productos del carrito desde localStorage al iniciar
-    useEffect(() => {
-        const storedCart = localStorage.getItem('carrito');
-        if (storedCart) {
-            setCartItems(JSON.parse(storedCart));
-        }
-    }, []);
-
-    const removeFromCart = (id) => {
-        console.log(`Removing item with id: ${id}`);
-        const updatedCart = cartItems.filter(item => item.id !== id);
-        console.log(`Updated cart:`, updatedCart);
-        setCartItems(updatedCart);
-        localStorage.setItem('carrito', JSON.stringify(updatedCart));
-    };
-
-    const clearCart = () => {
-        setCartItems([]);
-        localStorage.removeItem('carrito'); // O localStorage.clear() si es el único dato en localStorage
-    };
+const ShoppingCart = () => {    
+    initMercadoPago('APP_USR-9cd45816-387a-4b77-a014-76e07671a2c2', { locale: 'es-AR' });
+    const { cartItems, removeFromCart } = useCart();
+    const [preferenceId, setPreferenceId] = useState(null); 
 
     const getTotalPrice = () => {
         return cartItems.reduce((total, item) => total + parseFloat(item.price.replace('$', '')), 0).toFixed(2);
@@ -36,64 +16,90 @@ const ShoppingCart = () => {
     const handlePurchase = async () => {
         try {
             const token = localStorage.getItem('token');
-            const decodedToken = jwtDecode(token); // Decodificar el token JWT para obtener el email
-            const email = decodedToken.username;  
+            if (!token) {
+                alert('Debes iniciar sesión para comprar.');
+                window.location.href = '/login';
+                return;
+            }
 
-            // Transformar los productos del carrito para extraer los precios correctos
-            const cartItemsWithPrice = cartItems.map(item => ({
-                name: item.name,
-                description: item.description,
-                transaction_amount: parseFloat(item.price.replace('$', '')),  // Eliminar el símbolo '$' y convertir a número
-                quantity: 1,  
-                payer: {
-                    email: email  
-                },
-                payment_method_id: 'visa',  // Puedes permitir que el usuario elija, aquí lo estamos fijando como 'visa' para el ejemplo
+            // Decodificar el token JWT para obtener el email del usuario
+            const decodedToken = jwtDecode(token);
+            const email = decodedToken.username;
+            const userId = decodedToken.user_id;
+
+            // Crear los datos de los productos en el formato requerido por Mercado Pago
+            const items = cartItems.map(item => ({
+                title: item.name, // Título del producto
+                description: item.description || 'Sin descripción', // Descripción (opcional)
+                unit_price: parseFloat(item.price.replace('$', '')), // Precio como número
+                quantity: 1, // Cantidad (puedes ajustarlo si tu carrito tiene cantidades)
+                routine_id: item.routine_id
             }));
-            console.log(cartItemsWithPrice);
 
-            //const response = await fetch('http://localhost:3000/checkout', {
-            const response = await fetch('https://49b6-201-178-211-155.ngrok-free.app/checkout', {
+            // Configurar los datos del pagador
+            const payer = {
+                email
+            };
+
+            const routineIds = cartItems.map(item => item.routine_id);
+            const metadata = {
+                user_id: userId,
+                routine_ids: routineIds // Envía un array con todos los IDs de rutinas
+            };
+
+            // Configurar las URLs de retorno
+            const back_urls = {
+                success: 'http://localhost:3000/success',
+                failure: 'http://localhost:3000/failure',
+                pending: 'http://localhost:3000/pending'
+            };
+
+            // Enviar los datos al backend
+            const response = await fetch('http://localhost:3000/create-order', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': token ? `Bearer ${token}` : '' // Agrega el token en el encabezado
+                    'Authorization': `Bearer ${token}`
                 },
-                body: JSON.stringify(cartItemsWithPrice), // Envía el carrito como JSON
+                body: JSON.stringify({ items, payer, back_urls, metadata }) // Enviar el carrito y las URLs
             });
 
             if (response.ok) {
-                const message = await response.text();
-                alert(message); // Mensaje de éxito
-                clearCart(); // Vaciar el carrito después de la compra
+                const data = await response.json();
+                setPreferenceId(data.preferenceId); // Guardar la Preference ID para el botón de Wallet
+                console.log('Preference ID:', data.preferenceId);
             } else {
                 const errorMessage = await response.text();
-                alert(`Error al procesar la compra: ${errorMessage}`); // Mensaje de error detallado                
+                alert(`Error al procesar la compra: ${errorMessage}`);
+                console.log(errorMessage);
             }
         } catch (error) {
             console.error('Error:', error);
-            alert('Ocurrió un error al procesar la compra');
+            alert('Ocurrió un error al procesar la compra.');
         }
     };
+
 
     return (
         <div className='ShoppingCart-container'>
             <h2>Carrito de Compras</h2>
 
             {cartItems.length === 0 ? (
-                <p>Tu carrito esta vacio!</p>
+                <p>Tu carrito está vacío!</p>
             ) : (
                 <div className='ShoppingCart'>
                     <div className='ShoppingCart-items'>
                         <ul>
                             {cartItems.map(item => (
                                 <li key={item.id}>
-                                    <img src={item.image} alt={item.name} width="100" />
+                                    <a href={`programa/${item.routine_id}`}>
+                                        <img src={item.image} alt={item.name} width="100" />
+                                    </a>
                                     <h3>{item.name}</h3>
-                                    <p>{item.description}</p>
+                                    <p>{/*item.description*/}</p>
                                     <div className="item-details">
                                         <p>Precio: {item.price}</p>
-                                        <button onClick={() => removeFromCart(item.id)}>Elminar</button>
+                                        <button onClick={() => removeFromCart(item.id)}>Eliminar</button>
                                     </div>
                                 </li>
                             ))}
@@ -101,8 +107,13 @@ const ShoppingCart = () => {
                     </div>
                     <div className='ShoppingCart-btns'>
                         <h3>Total: ${getTotalPrice()}</h3>
-                        <button onClick={clearCart}>Borrar Carrito</button>
-                        <button onClick={handlePurchase}>Comprar</button>
+                        <button className='ShoppingCart-btns-button' onClick={handlePurchase}>Generar link <br /> Mercado Pago</button>
+
+                        {preferenceId && (
+                            <div id="wallet_container">
+                                <Wallet initialization={{ preferenceId }} />
+                            </div>
+                        )}
                     </div>
                 </div>
             )}

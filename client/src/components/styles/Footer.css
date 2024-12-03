@@ -4,6 +4,7 @@
     color: #ffffff;
     position: relative; /* Posiciona el footer en el flujo normal del documento */
     z-index: 2; /* Asegura que el footer esté encima del video si es necesario */
+    text-align: center;
   }
   
   .footer-container {
@@ -34,9 +35,9 @@
     color: #0056b3; 
   }
   
-  .footer-center .footer-logo {
-    max-width: 150px;
-  }
+  /*.footer-center .footer-logo {
+    
+  }*/
   
   .footer-right {
     display: grid;
@@ -90,7 +91,30 @@
     pointer-events: none;
   }
 
-
+  .footer-watermark {
+    display: inline-block;
+    text-align: center;
+    font-size: 14px; 
+    color: #b9bbbe; 
+    margin-top: 10px; 
+    margin-bottom: 0;
+    margin-right: 70px;
+    padding: 5px 200px; /* Espaciado interno más pequeño */
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);*/
+    /*background-color: rgba(0, 0, 0, 0.6); */
+    border-radius: 5px;
+    position: relative;
+}
+  
+  .footer-watermark a {
+    color: #b9bbbe;
+    text-decoration: none;
+  }
+  
+  .footer-watermark a:hover {
+    text-decoration: underline;
+  }
+  
 
 
 

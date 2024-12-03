@@ -1,0 +1,38 @@
+.second-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #202020; /* T1 */
+    padding: 1rem;
+    display: flex;
+    justify-content: center;    
+    margin-top: 8px;
+    border-radius: 20px; /* Borde redondeado */
+}
+
+.second-header__nav {
+    display: flex;
+    gap: 2rem;
+    text-align: center;
+}
+
+.second-header__link {
+    font-size: 18px;
+    color: #ffffff;
+    display: inline-block;
+    font-weight: 600;
+    padding: 0.5rem 1rem; /* Ajusta el área clickeable */
+    border-radius: 4px;
+    line-height: 1.5; /* Ajuste de altura de línea para centrar verticalmente el texto */
+    vertical-align: middle; /* Centrado vertical */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.second-header__link:hover {
+    color: #0056b3; /* blue 2 */
+    /*background-color: rgba(0, 174, 255, 0.1); /* Fondo de hover */
+}
+
+.second-header__link--active {
+    color: #00aeff; /* Color activo (blue 1) */    
+}

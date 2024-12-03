@@ -1,7 +1,12 @@
 .contact-form-container {
-    max-width: 800px;
-    margin: 50px auto;  
-    
+    margin: 0 auto; 
+    flex: 1; /* Ambos formularios ocuparán el mismo espacio */
+    max-width: 800px; 
+    padding: 20px; 
+    background-color: #23272a; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 50px auto;    
 }
 
 .contact-form-container h2 {

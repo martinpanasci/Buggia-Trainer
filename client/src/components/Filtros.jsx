@@ -45,13 +45,7 @@ const Filtros = ({ onFilter }) => {
                     ☰ Filtros
                 </button>
                 <div className={`sidebar-content ${isSidebarOpen ? "active" : ""}`}>
-                    <h2>Filtros</h2>
-                    <button className='btn-apply' type="button" onClick={handleFilterClick}>
-                        Aplicar Filtros
-                    </button>
-                    <button className='btn-clear' type="button" onClick={handleClearFilters}>
-                        Limpiar Filtros
-                    </button>
+                    <h2>Filtros</h2>                    
                     <form id="filter-form">                        
                         <fieldset>
                             <legend>Programas para:</legend>

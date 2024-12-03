@@ -1,0 +1,87 @@
+.schedule-form {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #23272a; /* T2 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.schedule-form__title {
+    text-align: center;
+    color: #00aeff; /* blue 1 */
+    font-size: 2em;
+    margin-bottom: 1rem;
+}
+
+.schedule-form__label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.schedule-form__label:hover {
+    color: #ffffff; /* Mantiene el color en hover */
+    cursor: default;    
+}
+
+.schedule-form__select, .schedule-form__input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #000; /* Texto en negro */
+}
+
+.schedule-form__config {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.schedule-form__btn, .schedule-form__btn-save {
+    background-color: #00aeff; /* blue 1 */
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.schedule-form__btn-save {
+    margin-top: 30px;
+}
+
+.schedule-form__btn:hover, .schedule-form__btn-save:hover {
+    background-color: #0056b3; /* blue 2 */
+}
+
+.schedule-form__table {
+    width: 100%;
+    margin-top: 1rem;
+    border-collapse: collapse;
+}
+
+.schedule-form__table th, .schedule-form__table td {
+    padding: 0.5rem;
+    text-align: center;
+    background-color: #202020; /* T1 */
+    color: #ffffff;
+    border: 1px solid #333;
+}
+
+.schedule-form__day-select {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: #000; /* Texto en negro */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}

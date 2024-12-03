@@ -1,0 +1,503 @@
+.overview-routine {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #23272a; /* T2 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+  }
+  
+  .overview-routine__title {
+    text-align: center;
+    color: #00aeff; /* blue 1 */
+    font-size: 2em;
+    margin-bottom: 1rem;
+  }
+  
+  .overview-routine__table, .overview-routine__exercise-table {
+    width: 100%;
+    margin-top: 1rem;
+    border-collapse: collapse;
+  } 
+  
+  .overview-routine__table th, .overview-routine__table td, 
+  .overview-routine__exercise-table th, .overview-routine__exercise-table td {
+    padding: 0.5rem;
+    text-align: center;
+    background-color: #202020; /* T1 */
+    color: #ffffff;
+    border: 1px solid #333;
+  }
+  
+  .overview-routine__day-details {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #23272a;
+  }
+  
+  .overview-routine__day {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #23272a; /* T2 */
+    border-radius: 8px;
+    overflow-x: auto; 
+    scrollbar-width: thin;
+    scrollbar-color: #4f545c #2c2f33; /* Color de la barra y el fondo */   
+  }
+
+
+  
+  .overview-routine__day h3 {
+    color: #00aeff; /* blue 1 */
+    font-size: 1.5em;
+    margin: 0;
+  }
+  
+  .overview-routine__table th, .overview-routine__table td {
+    padding: 0.5rem;
+    text-align: center;
+    border: 1px solid #333;
+  }
+  
+  .overview-routine__table th {
+    background-color: #202020; /* Tono gris oscuro */
+    color: #ffffff;
+  }
+  
+  .overview-routine__table .day-column-light {
+    background-color: #2c2f33; /* Tono gris más claro */
+  }
+  
+  .overview-routine__table .day-column-dark {
+    background-color: #202020; /* Tono gris más oscuro */
+    color: #ffffff;
+  }
+  
+  .day-column-light {
+    background-color: #2c2f33; /* Color claro */
+    cursor: pointer;
+  }
+  
+  .day-column-dark {
+    background-color: #202020; /* Color oscuro */
+    cursor: pointer;
+  }
+
+  .day-completed {
+    background-color: #28a745 !important; /* Verde para días completados */
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.day-column-light:hover, .day-column-dark:hover {
+  background-color: #00aeff; /* Color azul para el fondo */
+  color: #ffffff; /* Texto blanco */
+  cursor: pointer; /* Cambia el cursor a una mano */  
+}
+
+td svg {
+  position: absolute;
+  right: 10%; /* Ajusta la distancia desde la izquierda */
+  top: 50%;
+  transform: translateY(-50%); /* Centra el ícono verticalmente */
+  font-size: 0.9rem;
+  color: #00aeff;
+  transition: color 0.3s ease;
+}
+
+td:hover svg {
+  color: #ffffff;
+}
+
+td {
+  position: relative;
+  text-align: center; /* Centra el texto en la celda */
+}
+
+.overview-routine__exercise-table td{
+  background-color: #2c2f33 !important;
+}
+
+.overview-routine__exercise-table td:first-child {
+  text-align: left;
+}
+
+.overview-routine__exercise-table tr:nth-child(even) td {
+  background-color: #23272a !important; /* Alternancia de colores */
+}
+
+.click-instruction {
+  text-align: center;
+  font-size: 1rem;
+  color: #ffffff; /* Azul para destacarlo */
+  margin-top: 1rem;
+}
+
+.day-details-header {
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #202020; /* Tono gris oscuro */
+  border-radius: 8px;
+  color: #ffffff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.day-details-title {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.day-details-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/**************************************************************************************/
+
+.weights-container {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #23272a; /* Tono similar al contenedor principal */
+  
+}
+
+/* Encabezado del menú de pesos */
+.weights-header {
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #202020; /* Tono gris oscuro */
+  border-radius: 8px;
+  color: #ffffff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.weights-header:hover {
+  background-color: #00aeff; /* Azul destacado */
+  color: #ffffff; /* Texto blanco */
+}
+
+.weights-header h3 {
+  margin: 0;
+  font-size: 1.5rem;  
+}
+
+/* Contenedor de las semanas */
+.week-container {
+  margin-top: 1rem;
+  background-color: #23272a; /* Tono similar al contenedor */
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+/* Encabezado de cada semana */
+.week-header {
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #202020; /* Tono gris oscuro */
+  border-radius: 8px;
+  color: #ffffff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.week-header:hover {
+  background-color: #00aeff; /* Azul destacado */
+  color: #ffffff;
+}
+
+.week-header h4 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+/* Contenedor de los días */
+.day-container {
+  margin-top: 1rem;  
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+/* Título de cada día */
+.day-container h5 {
+  margin-bottom: 1rem;
+  color: #00aeff; /* Azul destacado */
+  font-size: 1.2rem;
+}
+
+/* Tablas de ejercicios */
+.day-table {
+  width: 100%;
+  margin-top: 1rem;
+  border-collapse: collapse;
+}
+
+.day-table th, .day-table td {
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px solid #333;
+  color: #ffffff;
+}
+
+.day-table th {
+  background-color: #202020; /* Gris oscuro */
+  font-weight: bold;
+}
+
+.day-table td {
+  background-color: #2c2f33; /* Gris más claro */
+}
+
+.day-table td:first-child {
+  text-align: left;
+}
+
+.day-table tr:nth-child(even) td {
+  background-color: #23272a; /* Alternancia de colores */
+}
+
+.day-header {
+  display: flex;
+  justify-content: space-between; /* Distribuye título y botón */
+  align-items: center; /* Alinea verticalmente */
+  margin-bottom: 1px; /* Espaciado inferior */
+}
+
+.delete-day-btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Alinea el botón hacia la derecha */
+  flex: 1; /* Ocupa el espacio restante para empujar el botón al borde derecho */
+}
+
+.delete-day-btn,
+.delete-exercise-btn {
+    background-color: transparent; /* Sin relleno */
+    color: #ffffff; 
+    border: 2px solid #ff4d4f; /* Borde rojo */
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.delete-day-btn:hover,
+.delete-exercise-btn:hover {
+    background-color: #ff4d4f; 
+    
+}
+
+.back-arrow {  
+  color: #00aeff;
+  cursor: pointer;
+  font-size: 1.7rem;
+  transition: color 0.3s ease;
+}
+
+.back-arrow:hover {
+  color: #ffffff;
+}
+
+
+/* Ajustes para pantallas pequeñas (móviles, max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .overview-routine {
+        padding: 1rem;
+        margin: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .overview-routine__title {
+        font-size: 1.5rem; /* Reducir el tamaño del título */
+        margin-bottom: 0.5rem;
+    }
+
+    .overview-routine__table, 
+    .overview-routine__exercise-table {
+        font-size: 0.8rem; /* Reducir tamaño de fuente en tablas */
+    }
+
+    .overview-routine__day h3 {
+        font-size: 1.2rem; /* Reducir tamaño de subtítulos */
+    }
+
+    .day-details-header {
+        flex-direction: column; /* Pila los elementos */
+        align-items: flex-start;
+    }
+
+    .weights-header h3,
+    .week-header h4,
+    .day-container h5,
+    .day-details-header h3 {
+        font-size: 1rem; /* Ajustar los títulos */
+    }
+
+    
+
+    .day-table {
+      width: 100%; /* La tabla ocupa todo el ancho del contenedor */
+      table-layout: auto; /* Asegura que las celdas se ajusten automáticamente */
+      overflow-x: auto; /* Permite desplazamiento horizontal si es necesario */
+  }
+
+  .day-container table {
+    display: block; /* Hace que el elemento se comporte como un bloque */
+    overflow-x: auto; /* Habilita desplazamiento horizontal */
+    white-space: nowrap; /* Evita que las celdas se ajusten al texto */
+}
+
+.day-table-wrapper {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  overflow-x: auto; /* Permite scroll si la tabla excede el ancho */
+}
+
+    .day-table th, 
+    .day-table td {
+        font-size: 0.8rem; /* Reducir texto en tablas */
+        padding: 0.3rem; /* Reducir el padding */
+    }
+
+    .delete-day-btn,
+    .delete-exercise-btn {
+        padding: 4px 8px;
+        font-size: 0.8rem; /* Reducir tamaño de botones */
+    }
+
+    .back-arrow {
+        font-size: 1.5rem; /* Ajustar tamaño del ícono */
+    }
+    
+    .overview-routine__day-details {
+      overflow-x: auto; /* Habilita scroll horizontal */       
+  }
+
+  /* Tablas dentro de DayDetails */
+  .overview-routine__exercise-table {
+      display: block; /* Comportamiento en bloque para tablas */
+      width: 100%; /* Ocupa todo el ancho disponible */
+      overflow-x: auto; /* Habilitar scroll horizontal */
+      white-space: nowrap; /* Evitar que el texto se ajuste automáticamente */
+  }
+
+  .overview-routine__exercise-table th,
+  .overview-routine__exercise-table td {
+      font-size: 0.8rem; /* Reducir texto para móviles */
+      padding: 0.3rem; /* Reducir espacio interno */
+  }
+
+  .overview-routine__exercise-table th {
+      text-align: left; /* Encabezados alineados a la izquierda */
+      background-color: #202020; /* Fondo gris oscuro */
+      color: #00aeff; /* Texto azul */
+  }
+
+  .overview-routine__exercise-table tr:nth-child(even) td {
+      background-color: #23272a; /* Alternar color de filas */
+  }
+
+  .overview-routine__exercise-table tr:nth-child(odd) td {
+      background-color: #2c2f33; /* Alternar color de filas */
+  }
+
+  /* Estilo de los enlaces en las tablas */
+  .overview-routine__exercise-table a {
+      color: #00aeff;
+      text-decoration: none;
+  }
+
+  .overview-routine__exercise-table a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+  }
+}
+
+/* Ajustes para pantallas medianas (tablets, min-width: 768px y max-width: 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .overview-routine {
+        padding: 1.5rem;
+        margin: 1.5rem auto;
+    }
+
+    .overview-routine__title {
+        font-size: 1.8rem; /* Ajustar tamaño del título */
+    }
+
+    .overview-routine__table th, 
+    .overview-routine__table td, 
+    .overview-routine__exercise-table th, 
+    .overview-routine__exercise-table td {
+        font-size: 0.9rem; /* Reducir ligeramente el texto */
+        padding: 0.4rem;
+    }
+
+    .day-details-header {
+        padding: 8px; /* Reducir espacio */
+    }
+
+    .weights-header h3,
+    .week-header h4,
+    .day-container h5 {
+        font-size: 1.1rem; /* Ajustar títulos */
+    }
+
+    .day-table th, 
+    .day-table td {
+        font-size: 0.9rem;
+        padding: 0.4rem;
+    }
+
+    .delete-day-btn,
+    .delete-exercise-btn {
+        padding: 6px 10px; /* Botones medianos */
+        font-size: 0.85rem;
+    }
+
+    .back-arrow {
+        font-size: 1.6rem;
+    }
+}
+
+/* Ajustes para pantallas grandes (desktop, min-width: 1024px) */
+@media screen and (min-width: 1024px) {
+    .overview-routine {
+        max-width: 1000px; /* Limitar el ancho */
+        padding: 2rem;
+    }
+
+    .overview-routine__table th, 
+    .overview-routine__table td, 
+    .overview-routine__exercise-table th, 
+    .overview-routine__exercise-table td {
+        font-size: 1rem; /* Texto normal en tablas */
+    }
+
+    .day-details-header {
+        padding: 12px;
+    }
+
+    .weights-header h3,
+    .week-header h4,
+    .day-container h5 {
+        font-size: 1.3rem; /* Títulos normales */
+    }
+
+    .delete-day-btn,
+    .delete-exercise-btn {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    .back-arrow {
+        font-size: 1.7rem;
+    }
+}

@@ -107,6 +107,31 @@
   cursor: pointer;
   display: none;
 }
+
+.cart-icon-container {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-icon-container img {
+  width: 40px; /* Tamaño del ícono */
+  height: auto;
+}
+
+.cart-icon-container .cart-count {
+  position: absolute;
+  top: 6px; /* Ajusta la posición vertical */
+  left: 0px; /* Ajusta la posición horizontal */
+  background-color: #ff0000a7; /* Fondo rojo para el contador */
+  color: #ffffff; /* Texto blanco */
+  font-size: 0.8em;
+  font-weight: bold;
+  border-radius: 50%; /* Hace que el fondo sea circular */
+  padding: 5px 8px; /* Tamaño del círculo */
+  min-width: 20px; /* Tamaño mínimo del contador */
+  text-align: center;
+}
+
   
 
   @media(max-width:991px) {

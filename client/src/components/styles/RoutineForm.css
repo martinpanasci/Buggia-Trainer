@@ -1,0 +1,260 @@
+/* Contenedor principal del formulario */
+.routine-form {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #23272a;    /* T2 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.routine-form h1 {
+    text-align: center;
+    color: #00aeff;    /* blue 1 */
+    font-size: 2em;
+    margin-bottom: 1rem;
+}
+
+/* Campos del formulario */
+.routine-form label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+.routine-form input[type="text"],
+.routine-form select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #000;    /* Texto en negro */
+}
+
+/* Botones */
+.routine-form .btn {
+    background-color: #00aeff;    /* blue 1 */
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-right: 20px;
+    transition: background-color 0.3s ease;    
+}
+
+.routine-form .btn:hover {
+    background-color: #0056b3;    /* blue 2 */
+}
+
+.routine-form .exercise-selector .btn-secondary,
+.modal .btn-secondary {
+    background-color: #23272a;    /* T2 */
+    color: #00aeff;    /* blue 1 */
+    border: 1px solid #00aeff;
+    padding: 0.7rem 1.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.exercise-selector .btn-secondary:hover {
+    background-color: #00aeff;    /* blue 1 */
+    color: #fff;
+}
+
+.routine-form .btn-secondary {
+    background-color: #23272a;    /* T2 */
+    color: #00aeff;    /* blue 1 */
+    border: 1px solid #00aeff;
+    padding: 0.7rem 1.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+/* Listado de Ejercicios */
+.routine-form .exercise-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.routine-form .exercise-item {
+    display: flex;
+    background-color: #202020;    /* T1 */
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+/* Modal de Agregar Ejercicio */
+
+.exercise-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.exercise-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #23272a;    /* T2 */
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    z-index: 1000;
+    text-align: center;
+}
+
+.exercise-modal h2 {
+    font-size: 1.5em;
+    color: #00aeff;    /* blue 1 */
+    margin-bottom: 1rem;
+}
+
+.exercise-modal input[type="text"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #000;
+}
+
+.exercise-modal button {
+    width: 100%;
+    background-color: #00aeff;    /* blue 1 */
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0.5rem;    /* Añade espacio entre botones */
+    display: inline-block;
+}
+
+.exercise-notes {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    height: 80px;
+    resize: vertical;
+    color: #000;    /* Texto en negro */
+}
+
+.btn-delete {
+    background-color: #ff4d4d;    /* Un color rojo para distinguir el botón */
+    color: #fff;
+    border: none;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 1rem;
+    transition: background-color 0.3s ease;
+    margin-left: auto;
+}
+
+.btn-delete:hover {
+    background-color: #cc0000;
+}
+
+/* Estilos para los labels */
+.routine-form label {
+    color: #ffffff; /* Ajusta el color al que prefieras */
+    display: block;
+    margin-top: 1rem;
+    font-weight: 500;
+  }
+  
+  .routine-form label:hover {
+    color: #ffffff; /* Mantiene el color en hover */
+    cursor: default;
+  }
+
+  .btn-danger {
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;  
+
+  }
+  
+  .btn-danger:hover {
+    background-color: #cc0000;
+  }
+  
+  .delete-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;      
+  }
+  
+  .delete-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #23272a;    /* T2 */
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    z-index: 1000;
+    text-align: center;
+  }
+
+  .delete-modal h2 {
+    font-size: 1.5em;
+    color: #00aeff;    /* blue 1 */
+    margin-bottom: 1rem;
+}
+
+  .delete-modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;     
+  }
+
+  .delete-btn-secondary {
+    background-color: #23272a;    /* T2 */
+    color: #00aeff;    /* blue 1 */
+    border: 1px solid #00aeff;
+    padding: 0.7rem 1.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;    
+}
+  

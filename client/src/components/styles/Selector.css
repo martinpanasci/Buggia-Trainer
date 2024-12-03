@@ -1,11 +1,18 @@
 .selector-container {
     max-width: 1200px;
-    margin: 0 auto;    
+    margin: 0 auto;       
     display: flex;
+}
+
+.selector-container h2 {
+    text-align: center;
+    color: #00aeff;    
+    font-size: 2em;
+    margin-bottom: 1rem;
 }
 
 @media (max-width: 991px) {
     .selector-container {
-        flex-direction: column;   
-    }    
+        flex-direction: column;
+    }
 }

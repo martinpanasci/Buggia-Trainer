@@ -1,19 +1,15 @@
-import mysql from 'mysql';
+import mysql from 'mysql2/promise';
 
-const connection = mysql.createConnection({
+// Crear un pool de conexiones
+const connection = mysql.createPool({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'login_node_jwt'
+    database: 'login_node_jwt',
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
 });
 
-// Intentar conectar a la base de datos
-connection.connect((err) => {
-    if (err) {
-        console.error('Error al conectar a la base de datos:', err.stack);
-        return;
-    }
-    console.log('Conexión exitosa a la base de datos, ID de conexión:', connection.threadId);
-});
-
+// Exportar el pool directamente
 export default connection;

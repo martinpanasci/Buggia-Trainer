@@ -6,6 +6,7 @@
     background-color: #23272a; 
     border-radius: 8px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
 }
 
 .login-form-container h2 {
@@ -65,3 +66,8 @@
     text-decoration: underline;
 }
 
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}

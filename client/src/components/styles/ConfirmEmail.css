@@ -1,0 +1,29 @@
+.confirm-email-container2 {
+    margin: 50px auto !important;
+    text-align: center;
+    padding: 20px;
+    background-color: #23272a;
+    color: #b9bbbe;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.confirm-email-container2 h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.confirm-email-container2 button {
+    margin-top: 20px;
+    background-color: #00aeff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.confirm-email-container2 button:hover {
+    background-color: #007bb5;
+}

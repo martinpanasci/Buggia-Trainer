@@ -1,0 +1,101 @@
+.routine-assign {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #23272a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+  }
+  
+  .routine-assign__title {
+    text-align: center;
+    color: #00aeff;
+    font-size: 2em;
+    margin-bottom: 1rem;
+  }
+  
+  .routine-assign__label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 500;
+    color: #ffffff;
+  }
+  
+  .routine-assign label:hover {
+    color: #ffffff; /* Mantiene el color blanco al pasar el mouse */
+    cursor: default;
+  }
+
+  .routine-assign__input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #000;
+  }
+  
+  .routine-assign__select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #000;
+  }
+  
+  .btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;    
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-assign {
+    background-color: #00aeff;
+    color: #fff;
+    border: none;
+  }
+  
+  .btn-assign:hover {
+    background-color: #0056b3;
+  }
+  
+  .btn-remove {
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+  }
+  
+  .btn-remove:hover {
+    background-color: #cc0000;
+  }
+  
+  .routine-assign__results {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #23272a;
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);    
+  }
+  
+  .routine-assign__result-item {
+    padding: 0.5rem;
+    cursor: pointer;
+    color: #fff;
+    font-family: inherit;    
+  }
+  
+
+  .routine-assign__result-item:hover {
+    background-color: #00aeff;
+  }

@@ -1,5 +1,5 @@
 .ShoppingCart-container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 50px auto;    
 }
 
@@ -14,8 +14,10 @@
 
 .ShoppingCart-container p {
     text-align: center;
-    font-size: 16px;
+    font-size: 18px;
 }
+
+/*************************************************************************************/
 
 .ShoppingCart {
     display: flex;
@@ -26,6 +28,8 @@
     margin: 0 auto;    
 }
 
+/*************************************************************************************/
+
 .ShoppingCart-items {
     flex: 1; /* Permite que ocupe el espacio disponible */
 }
@@ -35,31 +39,60 @@
     padding: 0; /* Sin padding */
 }
 
-.ShoppingCart-items li {    
-    display: flex; /* Usar flexbox para alinear los elementos */
-    align-items: center; /* Centrar verticalmente */    
+.ShoppingCart-items li {
+    align-items: center;
+    display: flex; /* Usar flexbox para alinear los elementos */    
     border-radius: 8px; /* Bordes redondeados */
-    padding: 10px; /* Espaciado interno */
+    padding: 15px; /* Espaciado interno */
     margin-bottom: 10px; /* Espacio entre elementos */
-    margin-right: 10px;
     background-color: #23272a; /* Fondo gris claro para los items */
     transition: box-shadow 0.3s; /* Transición para sombra */
 }
 
-.ShoppingCart-items li h3{
-    font-size: 22px;
-    margin-right: 5px;
+.ShoppingCart-items li img {
+    align-items: center;
+    flex-shrink: 0; /* Evita que la imagen se reduzca */
+    width: 100px; /* Tamaño fijo para la imagen */
+    height: auto; /* Mantiene la proporción */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-right: 15px; /* Espacio entre la imagen y el contenido */ /* Bordes redondeados para la imagen */
 }
+
+.ShoppingCart-items li h3 {
+    font-size: 22px;
+    margin: 0 10px 0 0; /* Espacio entre el título y el borde */
+    color: #ffffff;
+    text-align: left;
+    align-self: flex-start;
+    max-width: 200px; /* Limita el ancho máximo del h3 */
+    word-wrap: break-word; /* Permite que las palabras largas se dividan en varias líneas */
+    white-space: normal;
+}
+
+.ShoppingCart-items li p {
+    flex-grow: 1; 
+    margin: 0; 
+    color: #b9bbbe; 
+    text-align: left; 
+    margin-right: 20px;
+}
+
 
 .ShoppingCart-items li .item-details {
     display: flex;
-    flex-direction: column; /* Para apilar el precio y el botón */ 
-    margin-left: 10px; /* Espacio entre la imagen y los detalles */
-    margin-right: 10px;    
+    flex-direction: column;
+    align-items: flex-end; /* Alinea precio y botón a la derecha */
+    justify-content: center;
+    gap: 10px; /* Espaciado entre precio y botón */
 }
 
-.ShoppingCart-items li .item-details p {    
-    margin-bottom: 20px; /* Ajusta este valor para aumentar el espacio entre el precio y el botón */
+
+.ShoppingCart-items li .item-details p {
+    font-size: 16px;
+    color: #ffffff;
+    margin: 0;
+    font-weight: bold; 
+    text-align: right;   
 }
 
 .ShoppingCart-items img {
@@ -69,18 +102,20 @@
 
 .ShoppingCart-items button {
     padding: 10px 20px;
-    background-color: #00aeff;
+    background-color: transparent;
     color: #ffffff;
-    border: none;
+    border: 2px solid #ff4d4f;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .ShoppingCart-items button:hover {
-    background-color: #007bb5; /* Color de fondo al pasar el mouse */
+    background-color: #ff4d4f; /* Color de fondo al pasar el mouse */
 }
+
+/*************************************************************************************/
 
 .ShoppingCart-btns {
     display: flex;
@@ -96,7 +131,7 @@
     margin-bottom: 20px; /* Espacio debajo del total */
 }
 
-.ShoppingCart-btns button {
+.ShoppingCart-btns-button {
     padding: 10px 20px;
     background-color: #00aeff;
     color: #ffffff;
@@ -108,6 +143,118 @@
     margin-top: 20px;    
 }
 
-.ShoppingCart-btns button:hover {
+.ShoppingCart-btns-button:hover {
     background-color: #007bb5; /* Color de fondo al pasar el mouse */
+}
+
+/* Ajustes para tablets y pantallas medianas (máximo 991px) */
+@media (max-width: 991px) {
+    .ShoppingCart {
+        flex-direction: column; /* Colocar los elementos en columna */
+        align-items: center; /* Centrar los elementos */
+    }
+
+    .ShoppingCart-items {
+        width: 100%; /* Asegura que ocupe todo el ancho */
+    }
+
+    .ShoppingCart-btns {
+        width: 100%; /* Botones al 100% */
+        align-items: center; /* Centrar los botones */
+        padding: 10px; /* Reducir el padding */
+    }
+
+    .ShoppingCart-items li {
+        flex-direction: column; /* Coloca imagen y texto en columna */
+        align-items: center; /* Centra el contenido */
+    }
+
+    .ShoppingCart-items li img {
+        margin-right: 0; /* Quita el margen derecho de la imagen */
+        margin-bottom: 10px; /* Añade espacio debajo de la imagen */
+        width: 80%; /* Ajusta el tamaño para pantallas más pequeñas */
+    }
+
+    .ShoppingCart-items li h3 {
+        text-align: center; /* Centra el texto */
+    }
+
+    .ShoppingCart-items li p {
+        text-align: center; /* Centra la descripción */
+        margin-right: 0; /* Elimina el margen derecho */
+    }
+
+    .ShoppingCart-items li .item-details {
+        align-items: center; /* Centra precio y botón */
+    }
+
+    .ShoppingCart-btns-button {
+        width: 80%; /* Botones más grandes pero no al 100% */
+    }
+}
+
+/* Ajustes para móviles y pantallas pequeñas (máximo 768px) */
+@media (max-width: 768px) {
+    .ShoppingCart-container h2 {
+        font-size: 30px; /* Reduce el tamaño del título */
+    }
+
+    .ShoppingCart-items li img {
+        width: 100%; /* Imagenes ocupan todo el ancho */
+        height: auto; /* Mantener proporciones */
+    }
+
+    .ShoppingCart-items li h3 {
+        font-size: 18px; /* Reduce el tamaño de las fuentes */
+    }
+
+    .ShoppingCart-items li .item-details p {
+        font-size: 14px; /* Reduce el tamaño del precio */
+    }
+
+    .ShoppingCart-items button {
+        font-size: 14px; /* Botones más pequeños */
+        padding: 8px 15px; /* Reducir padding */
+    }
+
+    .ShoppingCart-btns h3 {
+        font-size: 20px; /* Reduce el tamaño del total */
+    }
+
+    .ShoppingCart-btns-button {
+        width: 100%; /* Botones al 100% */
+    }
+}
+
+/* Ajustes para móviles muy pequeños (máximo 480px) */
+@media (max-width: 480px) {
+    .ShoppingCart-items li {
+        padding: 10px;
+        text-align: center; /* Centra el contenido dentro del ítem */
+        display: flex;
+        flex-direction: column; /* Asegura que los elementos estén en columna */
+        align-items: center; /* Centra los elementos horizontalmente */
+    }
+
+    .ShoppingCart-items li img {
+        width: 80%; /* Imagen más pequeña */
+        max-height: 300px; /* Limita la altura máxima */
+        height: auto; /* Mantener la proporción */
+        margin: 0 auto; /* Centrar la imagen */
+        display: block; /* Asegura que se comporte como bloque */
+    }
+
+    .ShoppingCart-items li h3 {
+        font-size: 16px; /* Ajusta el tamaño del título */
+        margin-top: 10px; /* Espacio entre la imagen y el título */
+        text-align: center; /* Centrar el texto del título */
+        align-self: center; /* Centra el título con respecto al contenedor flex */
+        max-width: 100%; /* Asegura que el texto no se desborde */
+        word-wrap: break-word; /* Permite que las palabras largas se dividan */
+    }
+
+    .ShoppingCart-items li .item-details {
+        margin-top: 10px; /* Espaciado adicional para los detalles */
+        text-align: center; /* Asegura que los detalles también estén centrados */
+    }
 }

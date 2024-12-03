@@ -5,7 +5,7 @@ dotenv.config();
 
 // Configura MercadoPago usando el Access Token de producción
 const client = new MercadoPagoConfig({
-    accessToken: 'APP_USR-8537831324956828-102405-9f906bf26390518895e37aea8a368485-2056518394',  // Access Token de Producción
+    accessToken: 'APP_USR-6576478160850175-102403-bc01ef70bbba96ddc0727ec1148e72d2-2053817961',  // Access Token de Producción
     options: { timeout: 5000 }
 });
 

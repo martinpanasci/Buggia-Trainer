@@ -22,7 +22,11 @@ blue 2 (hover) #0056b3
     background-color: #36393f;  /*T3 Color*/
     color: #ffffff;  
     height: 100%;
-    margin: 0;    
+    margin: 0;
+    background-image: url('./assets/images/fondito3.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: repeat;    
   }
 
   #root {

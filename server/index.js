@@ -4,7 +4,6 @@ import cors from 'cors';
 //import morgan from 'morgan';
 import dotenv from 'dotenv';
 
-
 // Configurar dotenv para cargar variables de entorno
 dotenv.config();
 
@@ -16,10 +15,11 @@ const port = 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+
 // Configuración de CORS
 app.use(cors({
-    origin: ["http://localhost:4000"],
-    methods: ["GET", "POST"]
+    origin: ["http://localhost:3000", "http://localhost:4000"],
+    methods: ["GET", "POST", "DELETE", "PUT"]
 }));
 
 // Configurar rutas

@@ -1,65 +1,115 @@
 import React, { useState } from "react";
-import './styles/Register.css'
-import { useNavigate } from "react-router-dom";
+import './styles/Register.css';
+//import { useNavigate } from "react-router-dom";
 
-function Register() {   
+function Register() {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmpassword] = useState('');
+    const [errors, setErrors] = useState({});
+    const [serverError, setServerError] = useState('');
+    const [confirmationMessage, setConfirmationMessage] = useState('');
+    const [canResend, setCanResend] = useState(false);
 
-    const [name, setName] = useState();
-    const [email, setEmail] = useState();    
-    const [password, setPassword] = useState();
-    const [confirmPassword, setConfirmpassword] = useState();
+    const validateForm = () => {
+        const newErrors = {};
 
-    const navigate = useNavigate();
-    
-    const handleSubmit = (e) => {
-        e.preventDefault(); // Prevenimos el refresco de la página
-        const data={
-            name: name,
-            email: email,
-            password: password,
+        if (!name.trim()) {
+            newErrors.name = "El nombre es obligatorio.";
         }
-        
-     
+
+        if (!email.trim()) {
+            newErrors.email = "El correo electrónico es obligatorio.";
+        } else if (!/\S+@\S+\.\S+/.test(email)) {
+            newErrors.email = "El correo electrónico no es válido.";
+        }
+
+        if (!password) {
+            newErrors.password = "La contraseña es obligatoria.";
+        } else if (password.length < 4) {
+            newErrors.password = "La contraseña debe tener al menos 4 caracteres.";
+        }
+
         if (password !== confirmPassword) {
-            alert("Las contraseñas no coinciden");
-            return;
+            newErrors.confirmPassword = "Las contraseñas no coinciden.";
         }
-        console.log({data});
-        
-        fetch('http://localhost:3000/register', {
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (!validateForm()) return;
+
+        const data = { name, email, password };
+
+        fetch('http://localhost:3000/register', { // agregar nueva url ngrock
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                name: data.name,
-                email: data.email,
-                password: data.password
-            })
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
         })
-        .then(response=> {
-            if (response.ok) {  // Verifica si el registro fue exitoso
-                return response.json();  // Procesa la respuesta JSON si el registro fue exitoso
-            } else {
-                throw new Error("Registro fallido");
-            }
+            .then((response) => {
+                if (response.status === 409) {
+                    throw new Error('El correo ya está registrado.');
+                }
+                if (!response.ok) {
+                    throw new Error('Registro fallido.');
+                }
+                return response.json();
             })
-            .then(result => {  
-                console.log("Registro exitoso", result);
-                alert("Registro exitoso");              
-                navigate('/login');
+            .then(() => {
+                setConfirmationMessage('Hemos enviado un correo de confirmación. Por favor, revisa tu bandeja de entrada.');
+                setCanResend(false);
+
+                // Habilitar el reenvío después de 60 segundos
+                setTimeout(() => {
+                    setCanResend(true);
+                }, 60000);
             })
-            .catch(error =>{
-                console.error("Error durante el registro:", error);
-            alert("Hubo un problema con el registro. Inténtalo de nuevo.");
-            }) 
-        
+            .catch((error) => {
+                if (error.message === 'El correo ya está registrado.') {
+                    setErrors({ email: error.message });
+                } else {
+                    console.error('Error durante el registro:', error);
+                    setServerError('Hubo un problema con el registro. Inténtalo de nuevo.');
+                }
+            });
+    };
+
+    const handleResendConfirmation = () => {
+        fetch('http://localhost:3000/resendConfirmation', { // agregar nueva url ngrock
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email }),
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Error al reenviar el correo de confirmación.');
+                }
+                return response.json();
+            })
+            .then(() => {
+                alert('Correo reenviado con éxito. Por favor, revisa tu bandeja de entrada.');
+                setCanResend(false);
+
+                // Habilitar el reenvío después de otros 60 segundos
+                setTimeout(() => {
+                    setCanResend(true);
+                }, 60000);
+            })
+            .catch((error) => {
+                console.error('Error al reenviar el correo de confirmación:', error);
+                alert('Hubo un problema al intentar reenviar el correo.');
+            });
     };
 
     return (
         <div className="register-form-container">
             <h2>Registrarse</h2>
-            <form className="register-form">
+            {serverError && <div className="error-message">{serverError}</div>}
+            <form className="register-form" onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="name">Nombre Completo</label>
                     <input
@@ -67,9 +117,10 @@ function Register() {
                         id="name"
                         name="name"
                         value={name}
-                        onChange={(event)=>{setName(event.target.value)}}
+                        onChange={(event) => setName(event.target.value)}
                         required
                     />
+                    {errors.name && <div className="error-message">{errors.name}</div>}
                 </div>
                 <div className="form-group">
                     <label htmlFor="email">Correo Electrónico</label>
@@ -78,9 +129,10 @@ function Register() {
                         id="email"
                         name="email"
                         value={email}
-                        onChange={(event)=>{setEmail(event.target.value)}}
+                        onChange={(event) => setEmail(event.target.value)}
                         required
                     />
+                    {errors.email && <div className="error-message">{errors.email}</div>}
                 </div>
                 <div className="form-group">
                     <label htmlFor="password">Contraseña</label>
@@ -89,9 +141,10 @@ function Register() {
                         id="password"
                         name="password"
                         value={password}
-                        onChange={(event)=>{setPassword(event.target.value)}}
+                        onChange={(event) => setPassword(event.target.value)}
                         required
                     />
+                    {errors.password && <div className="error-message">{errors.password}</div>}
                 </div>
                 <div className="form-group">
                     <label htmlFor="confirm-password">Confirmar Contraseña</label>
@@ -100,12 +153,24 @@ function Register() {
                         id="confirm-password"
                         name="confirmPassword"
                         value={confirmPassword}
-                        onChange={(event)=>{setConfirmpassword(event.target.value)}}
+                        onChange={(event) => setConfirmpassword(event.target.value)}
                         required
                     />
+                    {errors.confirmPassword && <div className="error-message">{errors.confirmPassword}</div>}
                 </div>
-                <button type="submit" onClick={handleSubmit}>Registrarse</button>
+                <button type="submit">Registrarse</button>
             </form>
+
+            {confirmationMessage && (
+                <div className="confirmation-message">
+                    <p>{confirmationMessage}</p>
+                    {canResend && (
+                        <button onClick={handleResendConfirmation} className="resend-button">
+                            Reenviar correo de confirmación
+                        </button>
+                    )}
+                </div>
+            )}
         </div>
     );
 }

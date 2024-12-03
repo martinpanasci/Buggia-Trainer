@@ -1,0 +1,262 @@
+.routine-viewer {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #23272a; /* T2 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.routine-viewer__title {
+  text-align: center;
+  color: #00aeff; /* blue 1 */
+  font-size: 2em;
+  margin-bottom: 1rem;
+}
+
+.routine-viewer__label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.routine-viewer__label:hover {
+  color: #ffffff; /* Mantiene el color en hover */
+  cursor: default;    
+}
+
+.routine-viewer__select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #000; /* Texto en negro */
+}
+
+.routine-viewer__table, .routine-viewer__exercise-table {
+  width: 100%;
+  margin-top: 1rem;
+  border-collapse: collapse;
+}
+
+.routine-viewer__table th, .routine-viewer__table td, 
+.routine-viewer__exercise-table th, .routine-viewer__exercise-table td {
+  padding: 0.5rem;
+  text-align: center;
+  background-color: #202020; /* T1 */
+  color: #ffffff;
+  border: 1px solid #333;
+}
+
+.routine-viewer__day-details {
+  margin-top: 2rem;
+}
+
+.routine-viewer__day {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #23272a; /* T2 */
+  border-radius: 8px;
+}
+
+.routine-viewer__day h3 {
+  color: #00aeff; /* blue 1 */
+  flex-grow: 1;
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.routine-viewer__table th, .routine-viewer__table td {
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px solid #333;
+}
+
+.routine-viewer__table th {
+  background-color: #202020; /* Tono gris oscuro */
+  color: #ffffff;
+}
+
+.routine-viewer__table .day-column-light {
+  background-color: #2c2f33; /* Tono gris más claro */
+}
+
+.routine-viewer__table .day-column-dark {
+  background-color: #202020; /* Tono gris más oscuro */
+  color: #ffffff;
+}
+
+.day-column-light {
+  background-color: #2c2f33 ; /* Color claro */
+}
+
+.day-column-dark {
+  background-color: #202020; /* Color oscuro */
+}
+
+.delete-button-view-form {
+  background-color: transparent; 
+  color: #ffffff; 
+  border: 2px solid #ff4d4f;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem; 
+  margin-left: auto;
+  display: block;
+}
+
+.delete-button-view-form:hover {
+  background-color: #ff4d4f; /* Fondo rojo al hacer hover */  
+}
+
+.routine-viewer__day-header {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem; 
+  margin-top: 1rem;
+}
+
+.routine-viewer__btn-delete-day2 {
+  margin-left: auto !important;
+  background-color: transparent; 
+  color: #ffffff; 
+  border: 2px solid #ff4d4f;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; 
+  
+}
+
+.routine-viewer__btn-delete-day2:hover {
+  background-color: #d43a3a; 
+}
+
+.exercise-name-link {
+  color: #00aeff; /* Azul para destacar el enlace */
+  text-decoration: none; /* Sin subrayado */
+  font-weight: bold; /* Texto en negrita */
+}
+
+.exercise-name-link:hover {
+  text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
+
+/******************/
+
+/* Estilos generales para los botones de edición */
+.edit-button-routinesview,
+.edit-button-day-routinesview,
+.edit-button-exercise-routinesview {
+  background-color: transparent;
+  border: 2px solid #00aeff;
+  color: #00aeff;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.edit-button-day-routinesview {
+  margin-top: 16px;
+}
+
+
+
+.edit-button-routinesview:hover,
+.edit-button-day-routinesview:hover,
+.edit-button-exercise-routinesview:hover {
+  background-color: #00aeff;
+  color: #ffffff;
+}
+
+/* Contenedores para inputs */
+.edit-routine-container-routinesview,
+.edit-day-container-routinesview {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem; /* Espacio entre los botones */
+  margin-top: 1rem;
+}
+
+.edit-input-routinesview,
+.edit-input-day-routinesview,
+.edit-input-exercise-name-routinesview {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Botones de guardar */
+.save-button-routinesview,
+.save-button-day-routinesview,
+.save-button-exercise-routinesview {
+  background-color: #00aeff;
+  color: #ffffff;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.save-button-exercise-routinesview {
+  margin-top: 10px;
+}
+
+.save-button-routinesview:hover,
+.save-button-day-routinesview:hover,
+.save-button-exercise-routinesview:hover {
+  background-color: #008fcc;
+}
+
+.edit-delete-container-routinesview {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem; /* Espacio entre los botones */
+  margin-top: 1rem;
+}
+
+.edit-input-exercise-detail-routinesview,
+.edit-input-exercise-name-routinesview,
+.edit-input-exercise-notes-routinesview {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  border: 1px solid #ddd; /* Borde claro para contraste */
+  border-radius: 4px; /* Bordes redondeados */
+  width: 100%; /* Asegura que ocupe el espacio disponible */
+  background-color: #2c2f33; /* Fondo oscuro consistente con el diseño */
+  color: #ffffff; /* Texto blanco */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edit-input-exercise-detail-routinesview:focus,
+.edit-input-exercise-name-routinesview:focus,
+.edit-input-exercise-notes-routinesview:focus {
+  border-color: #00aeff; /* Resalta el borde al enfocar */
+  box-shadow: 0 0 5px rgba(0, 174, 255, 0.5); /* Efecto de brillo suave */
+  outline: none; /* Elimina el contorno por defecto */
+}
+
+.edit-input-exercise-notes-routinesview {
+  height: auto; /* Ajusta según contenido */
+  min-height: 2rem;
+  resize: vertical; /* Permite al usuario redimensionar verticalmente */
+}
+
+td > .edit-input-exercise-detail-routinesview:not(:last-child),
+td > .edit-input-exercise-name-routinesview:not(:last-child),
+td > .edit-input-exercise-notes-routinesview:not(:last-child) {
+  margin-bottom: 0.5rem; /* Espaciado entre inputs en caso de stacking */
+}

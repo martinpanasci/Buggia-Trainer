@@ -4,11 +4,12 @@ import crypto from 'crypto';
 import nodemailer from 'nodemailer';
 import jwt from 'jsonwebtoken';
 
+
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'buggiatrainer99@gmail.com',
-        pass: 'pmgk ykbl jpoi hcig',
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
     },
 });
 

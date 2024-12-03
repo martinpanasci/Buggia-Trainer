@@ -3,11 +3,12 @@ import nodemailer from 'nodemailer';
 import crypto from 'crypto';
 import bcrypt from 'bcrypt';
 
+
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'buggiatrainer99@gmail.com',
-        pass: 'pmgk ykbl jpoi hcig',
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
     },
 });
 

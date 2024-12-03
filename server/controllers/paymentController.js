@@ -2,9 +2,10 @@ import { MercadoPagoConfig, Preference } from 'mercadopago';
 import fetch from 'node-fetch';
 import connection from '../database/db.js';
 
+
 // Configuración del cliente de Mercado Pago
 const client = new MercadoPagoConfig({
-    accessToken: 'APP_USR-4217308818093031-112402-563ea988ee485481ae0fea40878db87e-2053817961',
+    accessToken: MERCADOPAGO_ACCESS_TOKEN,
     options: { timeout: 5000 }
 });
 
@@ -70,7 +71,7 @@ export const handleWebhook = async (req, res) => {
             const url = `https://api.mercadopago.com/v1/payments/${id}`;
             const payment = await fetchWithRetries(url, {
                 headers: {
-                    Authorization: `Bearer APP_USR-4217308818093031-112402-563ea988ee485481ae0fea40878db87e-2053817961`
+                    Authorization: `Bearer ${process.env.MERCADOPAGO_ACCESS_TOKEN}`
                 }
             });
 

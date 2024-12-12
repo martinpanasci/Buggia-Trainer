@@ -12,7 +12,7 @@ El proyecto está en desarrollo y faltan agregar imágenes, videos y detalles co
 
 ## 🎨 Diseño
 - **Estilo:** Minimalista y moderno.
-- **Colores:** Blanco, negro y detalles en azul francia.
+- **Colores:** Blanco, negro y detalles en celeste.
 - **Responsivo:** Compatible con dispositivos móviles y desktop.
 
 ## 🛠️ Funcionalidades principales
